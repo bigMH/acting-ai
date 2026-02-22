@@ -1,0 +1,11 @@
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# 本地说明（可选：若不想提交到仓库可取消注释）
+# 预览说明.md
+# 推送到GitHub步骤.md
