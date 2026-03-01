@@ -736,6 +736,149 @@ a:hover {
   margin-bottom: var(--spacing-md);
 }
 
+/* 科普文章配图布局 */
+.article-figure {
+  margin: var(--spacing-lg) auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+}
+
+.article-figure__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-figure img {
+  display: block;
+  max-height: 240px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.article-figure__caption {
+  margin-top: var(--spacing-xs);
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+/* 两列等宽图片（如：发展简史 + 离身/具身对比） */
+.article-figure--two-equal {
+  flex-wrap: nowrap;
+}
+
+.article-figure--two-equal .article-figure__item {
+  flex: 0 1 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+
+.article-figure--two-equal .article-figure__item img {
+  width: 100%;
+  height: auto;
+  max-height: 240px;
+  object-fit: contain;
+}
+
+/* 直接子元素img（用于海鞘+小猫那组） */
+.article-figure--two-equal > img {
+  flex: 0 1 48%;
+  max-width: 48%;
+  height: 240px;
+  max-height: 240px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* 行内两图等高 / 等宽布局（自我化关键技术图） */
+.article-figure__row {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  flex-basis: 100%;
+  margin-bottom: var(--spacing-sm);
+}
+
+.article-figure__row--equal-height .article-figure__item {
+  flex: 0 1 48%;
+}
+
+.article-figure__row--equal-height img {
+  height: 240px;
+  max-height: 240px;
+  width: auto;
+  object-fit: contain;
+}
+
+.article-figure__row--equal-width .article-figure__item {
+  flex: 1 1 0;
+}
+
+.article-figure__row--equal-width img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+}
+
+/* 放大图片样式 */
+.article-figure--large {
+  margin: calc(var(--spacing-md) / 2) auto;
+  padding: calc(var(--spacing-sm) / 2) 0;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 减小上方间距的图片样式 */
+.article-figure--tight-top {
+  margin-top: calc(var(--spacing-sm) / 2);
+  padding-top: calc(var(--spacing-xs) / 2);
+}
+
+.article-figure--large img {
+  max-height: 480px !important; /* 进一步放大，约200% */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: calc(var(--spacing-xs) / 2) auto;
+}
+
+.article-figure--large figcaption {
+  margin-top: calc(var(--spacing-sm) / 2);
+  padding-top: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .article-figure img {
+    max-height: 180px;
+  }
+  
+  .article-figure--large {
+    margin: calc(var(--spacing-md) / 2) auto;
+    padding: calc(var(--spacing-xs) / 2) 0;
+  }
+  
+  .article-figure--large img {
+    max-height: 360px !important; /* 移动端也放大 */
+    margin: calc(var(--spacing-xs) / 2) auto;
+  }
+}
+
 /* 返回科普列表链接 */
 .article-back-link {
   margin-top: var(--spacing-xl);
